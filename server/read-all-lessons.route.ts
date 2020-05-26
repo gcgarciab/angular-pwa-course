@@ -2,8 +2,10 @@
 
 export function readAllLessons(req, res) {
 
-  setTimeout(() => {
-    res.status(200).json({ lessons: db.readAllLessons() });
-  }, 60000);
+  // setTimeout(() => {
+  //   res.status(200).json({ lessons: db.readAllLessons() });
+  // }, 60000);
+
+  res.status(200).json({ lessons: db.readAllLessons() });
 
 }
