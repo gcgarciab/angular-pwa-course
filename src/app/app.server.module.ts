@@ -8,6 +8,10 @@ import { AppShellComponent } from './app-shell/app-shell.component';
 
 const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
 
+declare const global;
+
+global['navigator'] = {};
+
 @NgModule({
   imports: [
     AppModule,

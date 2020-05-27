@@ -4,6 +4,7 @@ import {Observable, of} from 'rxjs';
 import {Lesson} from '../model/lesson';
 import {SwPush} from '@angular/service-worker';
 import {catchError} from 'rxjs/operators';
+import { NewsletterService } from '../services/newsletter.service';
 
 @Component({
   selector: 'app-lessons',
@@ -15,9 +16,10 @@ export class LessonsComponent implements OnInit {
   lessons$: Observable<Lesson[]>;
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private lessonsService: LessonsService) {
-
-  }
+  constructor(
+    private lessonsService: LessonsService,
+    private newsletterService: NewsletterService
+  ) { }
 
   ngOnInit() {
     this.loadLessons();
@@ -25,6 +27,15 @@ export class LessonsComponent implements OnInit {
 
   loadLessons() {
     this.lessons$ = this.lessonsService.loadAllLessons().pipe(catchError(err => of([])));
+  }
+
+  subscribeToNotifications() {
+
+  }
+
+
+  sendNewsletter() {
+
   }
 
 }
