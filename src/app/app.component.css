@@ -1,32 +1,28 @@
-
-
 .l-header {
-    display: block;
+  display: block;
 }
 
 main {
-    padding-top: 50px;
-    margin: 0 auto;
-    width: 300px;
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 300px;
 }
 
 .course-header {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .course-header h3 {
-    text-align: center;
+  text-align: center;
 }
-
 
 .pwa-logo {
-    height: 140px;
+  height: 140px;
 }
 
-
 ::ng-deep body {
-    background: white;
+  background: white;
 }
 

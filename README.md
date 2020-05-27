@@ -1,3 +1,15 @@
+## Angular App Shell
+
+Commands: 
+
+- ng generate app-shell
+- Change "src/main.server.ts" to "main.server.ts" on tsconfig.server.json file
+- Change outputPath "dist/angular-pwa-course/browser" to "dist" on angular.json
+- Change server outputPath "dist/angular-pwa-course/server" to "dist-server" on angular.json
+- Copy "ngsw-worker.js" and "ngsw.json" files (ng build --prod) in anhother folder. (Ex: /root of project)
+- ng run angular-pwa-course:app-shell (IMPORTANT: This command doesn't create "ngsw-worker.js" and "ngsw.json" files, possible console errors)
+- Paste "ngsw-worker.js" and "ngsw.json" files into dist folder to avoid console errors.
+- Run server again and test!
 
 ## Angular PWA Course - Build the future of the Web Today
 
