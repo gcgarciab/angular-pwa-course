@@ -16,6 +16,8 @@ export class LessonsComponent implements OnInit {
   lessons$: Observable<Lesson[]>;
   isLoggedIn$: Observable<boolean>;
 
+  sub: PushSubscription;
+
   readonly VAPID_PUBLIC_KEY = 'BF9TtURzl3jgXA4TxVPLNl0BVV7j9HC5coNfbgDcsGjNY_xY2BYMcG0qLhAjCKSCn5YLmbdid20py7k_Im6U2qA';
 
   constructor(
@@ -36,6 +38,8 @@ export class LessonsComponent implements OnInit {
     this.swPush.requestSubscription({
       serverPublicKey: this.VAPID_PUBLIC_KEY
     }).then(sub => {
+      this.sub = sub;
+
       console.log('Notification Subscription: ', sub);
       this.newsletterService.addPushSubscriber(sub).subscribe(
         () => console.log('Sent push subscription object to server'),
@@ -48,7 +52,8 @@ export class LessonsComponent implements OnInit {
 
 
   sendNewsletter() {
-
+    console.log('Sending Newsletter to all Subscribers ...');
+    this.newsletterService.send().subscribe();
   }
 
 }
